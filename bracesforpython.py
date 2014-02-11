@@ -12,11 +12,11 @@ class BFP:
             unindent = False
         
             if "{" in x:
-                x = x.replace("{", ":\n")
+                x = x.replace("{", ":")
                 indent = True
             elif "}" in x:
                 nest -= 1
-                x = x.replace("}", "\n")
+                x = x.replace("}", "")
                 unindent = True
             
             to_exe += (" "*nest)+x+"\n"
