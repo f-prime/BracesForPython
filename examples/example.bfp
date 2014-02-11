@@ -1,0 +1,13 @@
+this_is_python = True
+
+if  this_is_python {
+
+   print "Haha, yeah, okay bud."
+  
+}
+
+else {
+
+print "That's what I thought." #I didn't indent on purpose :P
+
+}
