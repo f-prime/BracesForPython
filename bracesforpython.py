@@ -11,14 +11,21 @@ class BFP:
             indent = False
             unindent = False
         
-            if "{" in x:
-                x = x.replace("{", ":")
+            if x.endswith("{"):
+                x = list(x)
+                length = len(x)-1
+                x[length] = ":"
                 indent = True
-            elif "}" in x:
+                x = ''.join(x)
+                
+            elif x.endswith("}"):
+                x = list(x)
+                length = len(x)-1
+                x.pop(length)
                 nest -= 1
-                x = x.replace("}", "")
                 unindent = True
-            
+                x = ''.join(x)
+
             to_exe += (" "*nest)+x+"\n"
             if unindent:
                 if nest != 0:
